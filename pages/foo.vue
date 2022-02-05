@@ -1,5 +1,6 @@
 <template>
   <div>
+    <FooCom />
     {{ item }}
   </div>
 </template>
@@ -13,7 +14,6 @@ export default {
 
   async asyncData (ctx) {
     const item = 'foo asyncData'
-
     return { item }
   },
 }

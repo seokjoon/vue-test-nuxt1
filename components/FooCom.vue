@@ -1,6 +1,8 @@
 <template>
   <div>
     {{ item }}
+    <br />
+    <button @click="foo">foo</button>
   </div>
 </template>
 
@@ -21,7 +23,15 @@ export default {
   async fetch () {
     setTimeout(() => {
       this.item = 'FooCom'
-    }, 1000)
+    }, 500)
+  },
+
+
+  methods: {
+    foo() {
+      this.$store.dispatch('foo/setItem')
+      this.item = this.$store.getters['foo/getItem']
+    },
   },
 }
 </script>
